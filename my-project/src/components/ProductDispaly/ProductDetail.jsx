@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Star, Heart, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
 import data from "../../db/Shoes.json";
+import { ProductContext } from "../../context/ProductContext";
 
 const ProductPage = () => {
   const defaultImage = "/images/placeholder.jpg";
+  const { selectedProduct } = useContext(ProductContext);
 
   const product = {
-    title: data?.discription || "No Title Available",
-    brand: data?.company || "Unknown Brand",
-    price: data?.price || "N/A",
-    originalPrice: data?.prevprice || "N/A",
+    title: selectedProduct?.discription || "No Title Available",
+    brand: selectedProduct?.company || "Unknown Brand",
+    price: selectedProduct?.price || "N/A",
+    originalPrice: selectedProduct?.prevprice || "N/A",
     images: [
-      data?.image || defaultImage,
-      data?.image2 || defaultImage,
-      data?.image3 || defaultImage,
-      data?.image4 || defaultImage,
+      selectedProduct?.image || defaultImage,
+      selectedProduct?.image2 || defaultImage,
+      selectedProduct?.image3 || defaultImage,
+      selectedProduct?.image4 || defaultImage,
     ].filter(Boolean),
   };
 
@@ -29,8 +31,8 @@ const ProductPage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
   };
 
-  console.log("Product Data:", data , "length : ", product.images.length / product.images.length);
-  console.log("Current Image Path:", product.images[currentImageIndex]);
+  // console.log("Product Data:", data , "length : ", product.images.length / product.images.length);
+  // console.log("Current Image Path:", product.images[currentImageIndex]);
  
   
 
