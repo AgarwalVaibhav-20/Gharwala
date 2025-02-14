@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
-const userRoutes = require('./routes/Signup')
-const PORT = 5008;
+const signUpRoutes = require('./routes/Signup')
+const loginRoutes = require('./routes/Login')
+const PORT = 4000;
 const cors = require("cors");
 
 app.use(express.json());
@@ -23,7 +24,8 @@ app.get('/' , (req , res)=>{
     res.send("<h1>hello homies</h1>")
 })
 
-app.use('/user' , userRoutes)
+app.use('/user' , signUpRoutes)
+app.use('/user' , loginRoutes)
 app.listen(PORT , ()=>{
     console.log(`http://localhost:${PORT}`);
 })
