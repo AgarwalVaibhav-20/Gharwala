@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/Signup')
-const PORT = 5008;
+const PORT = 4000;
 const cors = require("cors");
 
 app.use(express.json());
