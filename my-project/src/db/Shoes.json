@@ -16,10 +16,59 @@
     "price": "₹2499",
     "prevprice": "M.R.P.: ₹4999",
     "percentage": "-50%",
+    "reviewData": {
+      "averageRating": 4.2,
+      "totalReviews": 127,
+      "ratingDistribution": [
+        {
+          "stars": 5,
+          "count": 64
+        },
+        {
+          "stars": 4,
+          "count": 32
+        },
+        {
+          "stars": 3,
+          "count": 16
+        },
+        {
+          "stars": 2,
+          "count": 10
+        },
+        {
+          "stars": 1,
+          "count": 5
+        }
+      ],
+        "recentReviews": [
+          {
+            "id": 1,
+            "userName": "John D.",
+            "rating": 5,
+            "date": "2025-02-10",
+            "comment": "Excellent product, exactly what I needed!"
+          },
+          {
+            "id": 2,
+            "userName": "Sarah M.",
+            "rating": 4,
+            "date": "2025-02-09",
+            "comment": "Good quality but shipping took longer than expected."
+          }
+        ]
+    },
     "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/379992/01/sv01/fnd/IND/fmt/png/PUMA-Foam-Stride-Men's-Running-Shoes",
     "image2": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/379992/01/fnd/IND/fmt/png/PUMA-Foam-Stride-Men's-Running-Shoes",
     "image3": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/379992/01/sv03/fnd/IND/fmt/png/PUMA-Foam-Stride-Men's-Running-Shoes",
-    "image4": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/379992/01/sv04/fnd/IND/fmt/png/PUMA-Foam-Stride-Men's-Running-Shoes"
+    "image4": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/379992/01/sv04/fnd/IND/fmt/png/PUMA-Foam-Stride-Men's-Running-Shoes",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "NIKE",
@@ -30,7 +79,84 @@
     "image": "https://m.media-amazon.com/images/I/615zuAmxr0L._SY500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71bzEmHEBWL._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/71HIxjOZRNL._SY500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71rb1fGuTgL._SY500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71rb1fGuTgL._SY500_.jpg",
+    "totalReviews": 239,
+    "recentReviews": [
+      {
+        "id": "",
+        "userName": "John D.",
+        "rating": 5,
+        "date": "2025-02-10",
+        "comment": "Excellent product, exactly what I needed!"
+      },
+      {
+        "id": "",
+        "userName": "John D.",
+        "rating": 5,
+        "date": "2025-02-10",
+        "comment": "Excellent product, exactly what I needed!"
+      }
+    ],
+    "ratingDistribution": {
+      "stars": 5,
+      "count": 64
+    },
+    "4": {
+      "stars": 4,
+      "count": 32
+    },
+    "3": {
+      "stars": 3,
+      "count": 16
+    },
+    "2": {
+      "stars": 2,
+      "count": 10
+    },
+    "1": {
+      "stars": 1,
+      "count": 5
+    },
+    "productDimensions": {
+      "length": 36,
+      "width": 23,
+      "height": 16,
+      "unit": "cm"
+    },
+    "weight": {
+      "value": 400,
+      "unit1": "g"
+    },
+    "dateFirstAvailable": "30 April 2024",
+    "manufacturer": {
+      "name": "NIKE INDIA PVT LTD",
+      "address": "GROUND & 1ST FLOOR OLYMPIA BUILDING,NO 66/1 BAGMANE TECH PARK,CV RAMAN NAGAR BANGALORE-560093 INDIA"
+    },
+    "productIdentifiers": {
+      "asin": "B0B6FXKBQK",
+      "modelNumber": "DM9537-001"
+    },
+    "origin": {
+      "country": "Vietnam"
+    },
+    "department": "mens",
+    "packer": {
+      "name": "NIKE INDIA PVT LTD",
+      "address": "GROUND & 1ST FLOOR OLYMPIA BUILDING,NO 66/1 BAGMANE TECH PARK,CV RAMAN NAGAR BANGALORE-560093 INDIA"
+    },
+    "importer": {
+      "name": "NIKE INDIA PVT LTD",
+      "address": "GROUND & 1ST FLOOR OLYMPIA BUILDING,NO 66/1 BAGMANE TECH PARK,CV RAMAN NAGAR BANGALORE-560093 INDIA"
+    },
+    "quantity": {
+      "value": 1,
+      "unit": "Count"
+    },
+    "genericName": "Running Shoe",
+    "rankings": {
+      "category": "Shoes & Handbags",
+      "rank": 2325
+    }
   },
   {
     "company": "PUMA",
@@ -41,7 +167,14 @@
     "image": "https://m.media-amazon.com/images/I/517k3p5NuiL._SY575_.jpg",
     "image2": "https://m.media-amazon.com/images/I/51kds4MT7PL._SY575_.jpg",
     "image3": "https://m.media-amazon.com/images/I/51Z1a9GDOsL._SY575_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/616ySt2pW8L._SY575_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/616ySt2pW8L._SY575_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "REEBOK",
@@ -52,7 +185,14 @@
     "image": "https://m.media-amazon.com/images/I/81xNrppj1AL._SX695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/81xMyLPHDaL._SX500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/81kYMbIshwL._SX500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71gp1sZv0VL._SX500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71gp1sZv0VL._SX500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "ATHCO",
@@ -63,7 +203,14 @@
     "image": "https://m.media-amazon.com/images/I/71JMDJLzRDL._SY625_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71oM1doc3dL._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/81OnoVlM4VL._SY500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/81A1qXjpxEL._SY500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/81A1qXjpxEL._SY500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "SPARX",
@@ -74,7 +221,14 @@
     "image": "https://m.media-amazon.com/images/I/617VAxDx6VL._SY500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/61cHczckDwL._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/61VzAAvV6RL._SY395_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61FznPO5IcL._SY500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61FznPO5IcL._SY500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "NEW BALANCE",
@@ -85,7 +239,14 @@
     "image": "https://m.media-amazon.com/images/I/61kX3HknFEL._SY695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/61Xwu2HTrNL._SY625_.jpg",
     "image3": "https://m.media-amazon.com/images/I/7105ZTwj-VL._SY500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/718W3uvKPML._SY695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/718W3uvKPML._SY695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "SPARX",
@@ -96,7 +257,14 @@
     "image": "https://m.media-amazon.com/images/I/61GzPhkADPL._SY500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/7129aXWVtOL._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/61a47-QyivL._SY500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61GXrPgSoVL._SY500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61GXrPgSoVL._SY500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "U.S. PLOL ASSN.",
@@ -107,7 +275,14 @@
     "image": "https://m.media-amazon.com/images/I/71+sXVsfv7L._SY625_.jpg",
     "image2": "https://m.media-amazon.com/images/I/81EgQ33KkML._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/81exqhDuIzL._SY500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71T0zWYyrKL._SY500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71T0zWYyrKL._SY500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "Bersache ",
@@ -118,7 +293,14 @@
     "image": "https://m.media-amazon.com/images/I/61xYkw2ifrL._SY500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/716ppdgvthL._SY500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/61BYQOF1nOL._SY695_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61P+H4PU7oL._SY695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61P+H4PU7oL._SY695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "Woodland ",
@@ -129,7 +311,14 @@
     "image": "https://m.media-amazon.com/images/I/81ec0Z+W-BL._SX500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/81Wq7UBospL._SX500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/81yO8zlh2ZL._SX500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/81R3yRenRfL._SX500_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/81R3yRenRfL._SX500_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "NIKE",
@@ -140,7 +329,14 @@
     "image": "https://m.media-amazon.com/images/I/71ESlW2SMBL._SX695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71ESlW2SMBL._SX695_.jpg",
     "image3": "https://m.media-amazon.com/images/I/71XJuPneOtL._SX500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71QY4JxA06L._SY625_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71QY4JxA06L._SY625_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "NIKE",
@@ -151,7 +347,14 @@
     "image": "https://m.media-amazon.com/images/I/71F9NVzaN-L._SX500_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71w8Sdrx-iL._SX500_.jpg",
     "image3": "https://m.media-amazon.com/images/I/71v6y+6EyML._SX500_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61lyUaxO3OL._SY675_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61lyUaxO3OL._SY675_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "Puma",
@@ -162,7 +365,14 @@
     "image": "https://m.media-amazon.com/images/I/51gxJpp7wpL._SY575_.jpg",
     "image2": "https://m.media-amazon.com/images/I/51MQWq6CbcL._SY575_.jpg",
     "image3": "https://m.media-amazon.com/images/I/51n0YcGg0aL._SY575_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/5198eFgugmL._SY695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/5198eFgugmL._SY695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "SPARX",
@@ -173,7 +383,14 @@
     "image": "https://m.media-amazon.com/images/I/61GzPhkADPL._SY695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/7129aXWVtOL._SY695_.jpg",
     "image3": "https://m.media-amazon.com/images/I/61GXrPgSoVL._SY695_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61a47-QyivL._SY695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61a47-QyivL._SY695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "BOLDFIT",
@@ -184,7 +401,14 @@
     "image": "https://m.media-amazon.com/images/I/61RzYM4b6CL._SY695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71eLAN3IGBL._SY695_.jpg",
     "image3": "https://m.media-amazon.com/images/I/81ogrry8qqL._SY695_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71SMeAoA5ZL._SY695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71SMeAoA5ZL._SY695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "WOODLANFD",
@@ -195,7 +419,14 @@
     "image": "https://m.media-amazon.com/images/I/71JUvrJMi0L._SX695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/71Gih58SNiL._SX695_.jpg",
     "image3": "https://m.media-amazon.com/images/I/714iwcBtvIL._SX695_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/71sTXKljwWL._SX695_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/71sTXKljwWL._SX695_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "BATA STORE",
@@ -206,7 +437,14 @@
     "image": "https://m.media-amazon.com/images/I/71JiO2+rhVL._SX625_.jpg",
     "image2": "https://m.media-amazon.com/images/I/51pj+GXLPbL._SY695_.jpg",
     "image3": "https://m.media-amazon.com/images/I/51oIh5dMTwL._SY625_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/51Wra9CD2cL._SY625_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/51Wra9CD2cL._SY625_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   },
   {
     "company": "HUSH",
@@ -217,6 +455,13 @@
     "image": "https://m.media-amazon.com/images/I/714ckrRfiUL._SX695_.jpg",
     "image2": "https://m.media-amazon.com/images/I/51mm+MzcUqL._SY675_.jpg",
     "image3": "https://m.media-amazon.com/images/I/51KXumNF7iL._SY675_.jpg",
-    "image4": "https://m.media-amazon.com/images/I/61a2qhJD0gL._SY675_.jpg"
+    "image4": "https://m.media-amazon.com/images/I/61a2qhJD0gL._SY675_.jpg",
+    "MaterialType": "Polyester",
+    "Closure ": "typeLace-Up",
+    "Heel type": "Flat",
+    "Water resistance level": "Not Water Resistant",
+    "Sole material": "Rubber",
+    "Style": "Running",
+    "Country of Origin": "Vietnam"
   }
 ]

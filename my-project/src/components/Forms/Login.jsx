@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import image from "../assets/images/Perfect.png";
 import { useState } from "react";
 // import UserContext from "../../context/UserContext";
@@ -51,9 +52,9 @@ export default function Login() {
                 </div>
 
                 <div className="flex justify-center items-center w-full mt-4">
-                  <button className="border rounded-xl py-2 px-3 w-full bg-slate-100 active:bg-slate-300">
+                  <Link to="/signup"  className="text-center border rounded-xl py-2 px-3 w-full bg-slate-100 active:bg-slate-300">
                     Create an Account
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
