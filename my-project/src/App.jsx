@@ -8,6 +8,7 @@ import Electronics from "./components/Electronics/Electronics";
 import ProductList from "./components/Shoes/Shoes";
 import ProductCard from "./components/ProductDispaly/ProductDetail";
 import Headset from "./components/Electronics/Headset/Headset";
+import { InputOTPControlled } from "./components/Forms/InputOTPControlled";
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<MainPage />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/electronics" element={<Electronics />} />
         <Route path="/shoes" element={<ProductList />} />
         <Route path="/product-detail" element={<ProductCard />} />
         <Route path="/headset" element={<Headset/>} />
+        <Route path="/verify-email" element ={<InputOTPControlled/>}/>
       </Route>
     </Routes>
   );

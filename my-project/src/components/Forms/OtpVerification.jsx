@@ -1,59 +1,49 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import axios from "axios";
+import Layout from "@/Layout";
 
-function OtpVerification({ otpLength = 6 }) {
-  const [otpField, setOtpField] = useState(new Array(otpLength).fill("")); // Correct initialization
-  const ref = useRef([]);
+export function InputOTPControlled() {
+  const [otp, setOtp] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Use React Router for redirection
 
-  const handleKeyDown = (e, index) => {
-    const key = e.key;
+  const handleVerify = async (event) => {
+    event.preventDefault();
 
-    if (key === "ArrowLeft") {
-      if (index > 0) ref.current[index - 1].focus();
+    if (otp.length !== 6) {
+      setMessage("OTP must be 6 digits.");
       return;
     }
 
-    if (key === "ArrowRight") {
-      if (index + 1 < otpField.length) ref.current[index + 1].focus();
-      return;
+    try {
+      const response = await axios.post("/user/verify-email", { code: otp });
+
+      setMessage(response.data.message);
+
+      if (response.data.success) {
+        setTimeout(() => {
+          navigate(<Layout/>); // Redirect after successful verification
+        }, 1500);
+      }
+    } catch (error) {
+      setMessage(error.response?.data?.message || "Something went wrong!");
     }
-
-    const updatedOtp = [...otpField];
-
-    if (key === "Backspace") {
-      updatedOtp[index] = "";
-      setOtpField(updatedOtp);
-      if (index > 0) ref.current[index - 1].focus();
-      return;
-    }
-
-    if (isNaN(key)) {
-      return;
-    }
-
-    updatedOtp[index] = key;
-    if (index + 1 < otpField.length) ref.current[index + 1].focus();
-
-    setOtpField(updatedOtp);
   };
 
-  useEffect(() => {
-    ref.current[0].focus(); // Corrected the typo here
-  }, []);
-
   return (
-    <div className="container">
-      {otpField.map((value, index) => (
+    <div>
+      <form onSubmit={handleVerify}>
         <input
-          className="border h-20 w-20 m-10 p-1 text-3xl text-black"
-          key={index}
-          ref={(currentInput) => (ref.current[index] = currentInput)}
           type="text"
-          value={value}
-          onKeyDown={(e) => handleKeyDown(e, index)}
+          maxLength="6"
+          value={otp}
+          onChange={(e) => setOtp(e.target.value)}
+          placeholder="Enter OTP"
         />
-      ))}
+        <button type="submit">Verify</button>
+      </form>
+      {message && <p>{message}</p>}
     </div>
   );
 }
-
-export default OtpVerification;

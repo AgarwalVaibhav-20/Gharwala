@@ -5,7 +5,7 @@ import path from "path"
 export default defineConfig({
   server:{
     proxy:{
-      '/user':'http://localhost:4000'
+      '/user':'http://localhost:6000'
     }
   },
   plugins: [react()],

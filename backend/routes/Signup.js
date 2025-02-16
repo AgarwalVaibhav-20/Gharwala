@@ -2,7 +2,7 @@ const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const { SendVerificationCode } = require("../middleware/Email");
+const { SendVerificationCode} = require("../middleware/Email");
 
 // Route to render signup page
 router.get("/signup", (req, res) => {
@@ -12,7 +12,7 @@ router.get("/signup", (req, res) => {
 // Route to handle user signup
 router.post("/signup", async (req, res) => {
   try {
-    const { fullname, email, password } = req.body;
+    const { name, email, password } = req.body;
     console.log(req.body);
 
     // Check if user already exists
@@ -29,7 +29,7 @@ router.post("/signup", async (req, res) => {
 
     // Create a new user instance
     const newUser = new User({
-      fullname,
+      name,
       email,
       password: hashedPassword,
       verificationCode,
@@ -41,7 +41,7 @@ router.post("/signup", async (req, res) => {
     await newUser.save();
 
     // Send verification code to the user's email
-    SendVerificationCode(newUser.email, verificationCode);
+    SendVerificationCode(newUser.email, newUser.verificationCode, newUser.fullname);
 
     // Return success response with the new user's data
     return res.status(200).json(newUser);
@@ -50,5 +50,6 @@ router.post("/signup", async (req, res) => {
     return res.status(500).json({ message: "Server error" });
   }
 });
+
 
 module.exports = router;
