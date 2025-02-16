@@ -1,4 +1,4 @@
-"use client";
+import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {
@@ -13,6 +13,7 @@ export function InputOTPControlled() {
   const [message, setMessage] = useState("");
   const [timer, setTimer] = useState(60);
   const [resendDisabled, setResendDisabled] = useState(true);
+  const [user, setUser] = useState(null);
 
   // Handle OTP verification
   const handleVerify = async (event) => {
@@ -26,6 +27,9 @@ export function InputOTPControlled() {
     try {
       const response = await axios.post("user/verify-email", { code: otp });
       setMessage(response.data.message);
+      if (response.data.success) {
+        setUser(response.data.user); // Assume your backend response includes a user object
+      }
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong!");
     }
@@ -49,6 +53,10 @@ export function InputOTPControlled() {
       setResendDisabled(false);
     }
   }, [timer]);
+
+  if (user) {
+    return <Navigate to="/" state={{ user }} replace={true} />;
+  }
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
