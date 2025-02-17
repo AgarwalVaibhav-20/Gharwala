@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import image from "../assets/images/Perfect.png";
 import { Link } from "react-router-dom";
+import audiosound from '../assets/sound/mixkit-long-pop-2358.wav';
 
 const SignupPage = () => {
   const [name, setName] = useState("");
@@ -9,6 +10,7 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const audioNotification = new Audio(audiosound);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +24,8 @@ const SignupPage = () => {
           email,
           password,
         });
-        setMessage("Signup successfu");
+        setMessage("Signup successful!");
+        audioNotification.play();
         console.log(response.data);
       } catch (error) {
         setMessage("Signup failed. Please try again.");
@@ -35,7 +38,7 @@ const SignupPage = () => {
 
   return (
     <div className="flex justify-center items-center w-full h-[100vh]  max-sm:-translate-y-8">
-      <div className="flex flex-col justify-center items-center h-full w-full -translate-y-16 max-sm:-translate-y-0 t max-sm:-mt-10">
+      <div className="flex flex-col justify-center items-center h-full w-full -translate-y-16 max-sm:-translate-y-0 max-sm:-mt-10">
         <div className="mb-6 max-sm:mb-1">
           <img className="h-14" src={image} alt="logo image" />
         </div>

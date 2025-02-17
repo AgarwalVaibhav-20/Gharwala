@@ -1,28 +1,34 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
-import AlertPopUp from "./AlertPopUp";
+import audiosound from "../assets/sound/mixkit-long-pop-2358.wav";
+import errorSound from "../assets/sound/error-2-126514.mp3";
 
 export function InputOTPControlled() {
+  const audioNotification = new Audio(audiosound);
+  const ErrorMusic = new Audio(errorSound);
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState(null);
   const [messageType, setMessageType] = useState("error");
   const [timer, setTimer] = useState(60);
   const [resendDisabled, setResendDisabled] = useState(true);
   const [user, setUser] = useState(null);
+  const [isVerified, setIsVerified] = useState(false);
+  const [wrongOtp, setWrongOtp] = useState(false); // Set initial state to false
 
-  // Handle OTP verification
   const handleVerify = async (event) => {
     event.preventDefault();
     if (otp.length !== 6) {
       showMessage("OTP must be 6 digits.", "error");
+      setWrongOtp(true);
+      ErrorMusic.play(); // Play error sound for invalid OTP length
       return;
     }
 
@@ -34,16 +40,23 @@ export function InputOTPControlled() {
       );
       if (response.data.success) {
         setUser(response.data.user);
+        setIsVerified(true);
+        audioNotification.play();
+        setWrongOtp(false); // Reset wrongOtp on success
+      } else {
+        setWrongOtp(true);
+        ErrorMusic.play();
       }
     } catch (error) {
       showMessage(
         error.response?.data?.message || "Something went wrong!",
         "error"
       );
+      setWrongOtp(true);
+      ErrorMusic.play();
     }
   };
 
-  // Handle OTP Resend
   const handleResendOTP = async () => {
     try {
       setTimer(60);
@@ -58,7 +71,6 @@ export function InputOTPControlled() {
     }
   };
 
-  // Timer for resend button
   useEffect(() => {
     let interval;
     if (timer > 0) {
@@ -69,26 +81,20 @@ export function InputOTPControlled() {
     return () => clearInterval(interval);
   }, [timer]);
 
-  // Function to show alert messages
   const showMessage = (msg, type) => {
     setMessage(msg);
     setMessageType(type);
   };
 
-  if (user) {
-    return <Navigate to="/" state={{ user }} replace={true} />;
-  }
-
   return (
-    <div className="flex justify-center items-center h-screen  bg-gray-50">
-      {/* OTP Card */}
+    <div className="flex justify-center items-center h-screen bg-gray-50">
       <motion.section
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="w-full max-w-sm bg-white p-6 -mt-36 rounded-lg shadow-lg border border-gray-200 max-sm:ml-6 max-sm:mr-6 max-sm:-mt-32"
       >
-        <div className="space-y-4 flex flex-col w-full items-center h-full ">
+        <div className="space-y-4 flex flex-col w-full items-center h-full">
           <h2 className="text-2xl font-bold text-gray-900">
             Verify Your Identity
           </h2>
@@ -96,22 +102,47 @@ export function InputOTPControlled() {
             Enter the 6-digit code sent to your email or phone.
           </p>
 
-          {/* OTP Form */}
-          {/* Animated Alert Message */}
-          <div className="relative w-[800px] h-full flex justify-center items-start">
-            <div className="absolute  max-sm:-top-44 left-1/2 -translate-x-1/2 flex justify-center">
-              <AnimatePresence>
-                {message && (
-                  <AlertPopUp
-                    message={message}
-                    type={messageType}
-                    onClose={() => setMessage(null)}
-                  />
-                )}
-              </AnimatePresence>
+          {isVerified && (
+            <div
+              role="alert"
+              className="alert alert-success flex justify-center items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span>You are verified.</span>
             </div>
-          </div>
-
+          )}
+          {wrongOtp && (
+            <div className="flex justify-center items-center">
+              <div role="alert" className="alert alert-error">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>Please enter a valid OTP.</span>
+              </div>
+            </div>
+          )}
           <form
             className="w-full flex flex-col items-center"
             onSubmit={handleVerify}
@@ -119,7 +150,10 @@ export function InputOTPControlled() {
             <InputOTP
               maxLength={6}
               value={otp}
-              onChange={setOtp}
+              onChange={(value) => {
+                setOtp(value);
+                setWrongOtp(false); // Reset wrong OTP state when user changes input
+              }}
               className="w-full flex justify-center gap-2"
             >
               <InputOTPGroup className="flex justify-center">
@@ -143,7 +177,6 @@ export function InputOTPControlled() {
               )}
             </div>
 
-            {/* Verify Button */}
             <div className="mt-5 w-full">
               <Button
                 type="submit"
@@ -153,18 +186,19 @@ export function InputOTPControlled() {
               </Button>
             </div>
 
-            {/* Resend OTP */}
             <div className="flex flex-col items-center mt-4 text-sm text-gray-600">
               <span>Didn't receive the code?</span>
-              <button
-                onClick={handleResendOTP}
-                className={`text-blue-600 hover:underline mt-1 ${
-                  resendDisabled ? "opacity-50 cursor-not-allowed" : ""
-                }`}
-                disabled={resendDisabled}
-              >
-                Resend Code {resendDisabled && `(${timer}s)`}
-              </button>
+              {!isVerified && (
+                <button
+                  onClick={handleResendOTP}
+                  className={`text-blue-600 hover:underline mt-1 ${
+                    resendDisabled ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                  disabled={resendDisabled}
+                >
+                  Resend Code {resendDisabled && `(${timer}s)`}
+                </button>
+              )}
             </div>
           </form>
         </div>
