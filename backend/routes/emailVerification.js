@@ -23,7 +23,7 @@ router.post("/verify-email", async (req, res) => {
     // user.verificationCode = undefined;
     // await user.save();
 
-    const updatedUser = await User.findOneAndUpdate({email: email}, {$set: {isVerified: true, verificationCode: undefined}}, {new:true});
+    const updatedUser = await User.findOneAndUpdate({email: email}, {$set: {isVerified: true}, $unset:{["verificationCode"]: 1}}, {new:true});
 
     if(!updatedUser){
       return res.status(400).json({ success: false, message: "Unable to verify user" });
