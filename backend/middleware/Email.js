@@ -27,8 +27,8 @@ const welcomeEmail = async (email,fullname) => {
         const response = await transporter.sendMail({
             from: 'agarwalvaibhavknp@gmail.com',
             to: email,
-            subject: "Verify your Email",
-            text: `Verify your Email: ${verificationCode}`,  // Include code in text version
+            subject: `Welcome ${fullname}`,
+            text: `You have been signed-in with this email ${email}`,
             html: welcomeEmailTemplate.replace("{fullname}" , fullname),  // Pass the final email content
         });
 

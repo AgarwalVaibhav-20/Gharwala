@@ -3,20 +3,31 @@ const router = express.Router();
 const { welcomeEmail } = require("../middleware/Email");
 const User = require("../models/user");
 
+
 router.post("/verify-email", async (req, res) => {
   try {
-    const { code } = req.body;
-    const user = await User.findOne({ verificationCode: code });
+    const { email, code } = req.body;
+    const user = await User.findOne({ email: email });
 
     if (!user) {
-      return res.status(400).json({ success: false, message: "Invalid or Expired Code" });
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    
+    console.log("Verifying OTP:", code);
+    if(user.verificationCode != code){
+      return res.status(400).json({ success: false, message: "Wrong otp" });
     }
 
-    console.log("Verifying OTP:", code);
 
-    user.isVerified = true;
-    user.verificationCode = undefined;
-    await user.save();
+    // user.isVerified = true;
+    // user.verificationCode = undefined;
+    // await user.save();
+
+    const updatedUser = await User.findOneAndUpdate({email: email}, {$set: {isVerified: true, verificationCode: undefined}}, {new:true});
+
+    if(!updatedUser){
+      return res.status(400).json({ success: false, message: "Unable to verify user" });
+    }
 
     await welcomeEmail(user.email, user.fullname);
 
