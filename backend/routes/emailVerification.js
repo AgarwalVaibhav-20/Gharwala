@@ -3,6 +3,7 @@ const router = express.Router();
 const { welcomeEmail } = require("../middleware/Email");
 const User = require("../models/user");
 
+
 router.post("/verify-email", async (req, res) => {
   try {
     const { code } = req.body;
