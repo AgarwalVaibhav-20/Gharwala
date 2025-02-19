@@ -260,16 +260,15 @@ function Navbar() {
                   <IoLogInOutline size={26} />
                   <span>Logout</span>
                 </Link>
-</li>
-                <li className="w-full py-4 px-3 text-lg border-b-[1px]">
-                  <Link
-                    to="/signup"
-                    className="flex items-center space-x-2 "
-                    onClick={toggleMenu}
-                  >
-                    Signup
-                  </Link>
-                
+              </li>
+              <li className="w-full py-4 px-3 text-lg border-b-[1px]">
+                <Link
+                  to="/signup"
+                  className="flex items-center space-x-2 "
+                  onClick={toggleMenu}
+                >
+                  Signup
+                </Link>
               </li>
 
               <li className="flex space-x-2 items-center w-full py-4 px-3 border-b">

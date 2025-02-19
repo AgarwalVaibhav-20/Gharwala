@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-// import { InputOTPControlled } from "./components/Forms/InputOTPControlled";
+import MensProduct from "./components/ProductDispaly/MensProduct";
+     {/* <InputOTPControlled/> */}
 
 const Layout = () => {
+  
   return (
     <div>
-     <Navbar/>
-     {/* <InputOTPControlled/> */}
-     
+      <Navbar />
+      <MensProduct/>
       <Outlet />
-    
     </div>
   );
 };
