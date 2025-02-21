@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
   service: "gmail",
   auth: {
     user: "agarwalvaibhavknp@gmail.com",
-    pass: "honk bqho jqrx aatw",
+    pass: "type your key ",
   },
 });
 
